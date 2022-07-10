@@ -5,11 +5,15 @@
 :root{
     --full-width: 100%;
     --full-height: 100vh;
+    --back-color-jour: rgb(49, 172, 255);
 }
 
 body{
     padding: 0;
     margin: 0;
+    width: var(--full-width);
+    height: var(--full-height);
+    background-color: var(--back-color-jour);
 }
 
 //Thème clair et sombre pour le projet
