@@ -1,10 +1,11 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
-// import { Html } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import "./style/style.scss";
 // import Model from "./composant/modules/Lanscape";
 import Fantasy from "./composant/modules/Fantasy";
+import Meteo from "./composant/Meteo";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <ambientLight />
           <Suspense>
               <Fantasy />
+              <Html fullscreen>
+                <Meteo/>
+              </Html>
           </Suspense>
       </Canvas>
     </>
