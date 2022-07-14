@@ -1,0 +1,31 @@
+header{
+    width: var(--full-width);
+    height: var(--height-header);
+    background-color: red;
+}
+
+div.box-meteo{
+    height: var(--height-100);
+    width: var(--width-box-header);
+    background-color: var(--background-indic);
+    border-radius: 15px;
+}
+
+.swiper{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide{
+    position: relative;
+}
+
+.swiper-pagination{
+    /* transform: translate(0px, 45px); */
+    /* position: relative !important; */
+    bottom: 0!important;
+}
+
+.swiper-pagination-bullet{
+    background-color: var(--color-white);
+}
