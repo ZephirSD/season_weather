@@ -1,0 +1,21 @@
+div.grid-meteo{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+div.grid-meteo div.icon-box,
+div.grid-meteo div.indic-meteo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.image-meteo{
+    width: 75px;
+    height: 75px;
+}
+
+div.indic-meteo{
+    font-size: 35px;
+    font-family: var(--montserrat);
+}
