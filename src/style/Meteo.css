@@ -2,13 +2,25 @@ header{
     width: var(--full-width);
     height: var(--height-header);
     background-color: red;
+    display: inline-block;
+    position: relative;
 }
 
-div.box-meteo{
+div.box-meteo,
+div.box-moon{
     height: var(--height-100);
     width: var(--width-box-header);
     background-color: var(--background-indic);
     border-radius: 15px;
+    position: absolute;
+}
+
+div.box-moon{
+    right: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .swiper{
@@ -21,8 +33,6 @@ div.box-meteo{
 }
 
 .swiper-pagination{
-    /* transform: translate(0px, 45px); */
-    /* position: relative !important; */
     bottom: 0!important;
 }
 
