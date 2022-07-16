@@ -43,9 +43,9 @@ function Vent({img,indic,degre}) {
     <>
       <div className='grid-meteo'>
         <div className='icon-box'>
-            <img src={img} alt="vent" className='image-meteo' style={{ transform: `rotateZ(${degre}deg)`}}/>
+            <img src={img} alt="vent" className='image-meteo' style={{ transform: `rotateZ(${degre}deg)`, width: '60px', height: '60px', marginTop: '10px'}}/>
         </div>
-        <div className='indic-meteo'>
+        <div className='indic-meteo' style={{color: '#668FFF'}}>
             {`${Math.round(indic * (3600/1000))}km/h`}
         </div>
       </div>
@@ -60,7 +60,7 @@ function Humidite({img,indic}) {
         <div className='icon-box'>
             <img src={img} alt="vent" className='image-meteo'/>
         </div>
-        <div className='indic-meteo'>
+        <div className='indic-meteo' style={{color: '#1795F6'}}>
             {`${indic}%`}
         </div>
       </div>
@@ -75,7 +75,7 @@ function Pression({img,indic}) {
         <div className='icon-box'>
             <img src={img} alt="vent" className='image-meteo'/>
         </div>
-        <div className='indic-meteo'>
+        <div className='indic-meteo' style={{color: '#1795F6'}}>
             {`${indic} hPa`}
         </div>
       </div>
@@ -83,4 +83,34 @@ function Pression({img,indic}) {
   )
 }
 
-export {Temperature,Vent,Humidite,Pression}
+function Cloud({img,indic}) {
+  return (
+    <>
+      <div className='grid-meteo'>
+        <div className='icon-box'>
+            <img src={img} alt="vent" className='image-meteo'/>
+        </div>
+        <div className='indic-meteo' style={{color: '#43464B'}}>
+            {`${indic}%`}
+        </div>
+      </div>
+    </>
+  )
+}
+
+function Moon({moonPhase}) {
+  return (
+    <>
+      <div className="visibilite">
+        {`${(moonPhase * 100)}% de visibilité`}
+      </div>
+      {
+        (moonPhase === 0.5 || moonPhase === 1 || moonPhase === 0 || moonPhase === 0.25 || moonPhase === 0.75) ? (<><div className="phase_lune">{(moonPhase === 0) ? 'Nouvelle Lune' : (moonPhase === 1) ? 'Pleine Lune' : (moonPhase === 0.25) ? 'Premier quartier de lune' : (moonPhase === 0.75) ? 'Dernier quartier de lune' : <></>}</div></>) : (<></>)
+      }
+    </>
+  )
+}
+
+export default Moon
+
+export {Temperature,Vent,Humidite,Pression,Cloud}
