@@ -1,0 +1,16 @@
+footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    background-color: var(--background-indic);
+    width: var(--full-width);
+    height: var(--height-header);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    color: black;
+    font-family: var(--montserrat);
+}
