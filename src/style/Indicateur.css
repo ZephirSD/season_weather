@@ -16,6 +16,6 @@ img.image-meteo{
 }
 
 div.indic-meteo{
-    font-size: 35px;
+    font-size: 1.8rem;
     font-family: var(--montserrat);
 }
