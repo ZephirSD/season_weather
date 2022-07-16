@@ -6,7 +6,8 @@ import "swiper/css/pagination";
 import direction from "../assets/icones/direction_icon.png";
 import water from "../assets/icones/water_icon.png";
 import wave from "../assets/icones/wave_icon.png";
-import { Humidite, Pression, Temperature, Vent } from "./modules/Indicateur";
+import cloud from "../assets/icones/cloud_icon.png";
+import Moon, { Cloud, Humidite, Pression, Temperature, Vent } from "./modules/Indicateur";
 
 function Meteo() {
   const [data, setData] = useState([]);
@@ -19,6 +20,26 @@ function Meteo() {
       .catch((error) => console.log("error", error));
   };
   // console.log(data);
+  // window.addEventListener('load', () =>{
+  //   let displayDate = new Date();
+  //   let heures = displayDate.getHours();
+  //   let minutes = displayDate.getMinutes();
+  //   minutes = checkTime(minutes);
+  //   // var t = setTimeout(startTime, 500);
+  //   function checkTime(i) {
+  //       if (i < 10) {i= "0" + i};
+  //       return i;
+  //   }
+  //   console.log(heures);
+  // })
+  // const onloadDate = () => {
+  //   window.onload = function () {
+  //     let displayDate = new Date();
+  //     let heures = displayDate.getHours();
+  //     // let minutes = displayDate.getMinutes();
+  //     console.log(heures);
+  //   }
+  // }
   useEffect(() => {
     meteoAPI();
   }, []);
@@ -48,12 +69,22 @@ function Meteo() {
                   <SwiperSlide>
                     <Pression img={wave} indic={res.pressure}/>
                   </SwiperSlide>
+                  <SwiperSlide>
+                    <Cloud img={cloud} indic={res.clouds}/>
+                  </SwiperSlide>
                   </>
               ) : (
                 <></>
               )
             )}
           </Swiper>
+        </div>
+        <div className="box-moon">
+          {
+            data.map((res,index) => (
+              index === 0 ? <Moon moonPhase={res.moon_phase}/> : <></>
+            ))
+          }
         </div>
       </header>
     </>
