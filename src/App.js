@@ -12,7 +12,7 @@ function App() {
     <>
       <Canvas flat={true} shadows={true} camera={{position: [240,120,-180]}} style={{ width: "100%", height: "100vh" }}>
         <ambientLight />
-          <Suspense>
+          <Suspense fallback={null}>
               <Fantasy />
               <Html fullscreen>
                 <Meteo/>
