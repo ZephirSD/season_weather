@@ -15,7 +15,21 @@ img.image-meteo{
     height: 75px;
 }
 
-div.indic-meteo{
+div.indic-meteo,
+div.visibilite{
     font-size: 1.8rem;
     font-family: var(--montserrat);
+}
+
+div.visibilite,
+div.phase_lune{
+    font-family: var(--montserrat);
+}
+
+div.visibilite{
+    font-size: 1.5rem;
+}
+
+div.phase_lune{
+    font-size: 1.2rem;
 }
