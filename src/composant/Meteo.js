@@ -9,7 +9,7 @@ import wave from "../assets/icones/wave_icon.png";
 import cloud from "../assets/icones/cloud_icon.png";
 import Moon, { Cloud, Humidite, Pression, Temperature, Vent } from "./modules/Indicateur";
 
-function Meteo() {
+function Meteo({heuresDay}) {
   const [data, setData] = useState([]);
   const meteoAPI = () => {
     fetch(
@@ -46,7 +46,7 @@ function Meteo() {
   return (
     <>
       <header>
-        <div className="box-meteo">
+        <div className="box-meteo" style={(heuresDay > 18) ? {backgroundColor: 'var(--background-indic-night)'} : (heuresDay > 7) ? {backgroundColor: 'var(--background-indic)'} : {backgroundColor: 'var(--background-indic)'}}>
           <Swiper
             spaceBetween={20}
             modules={[Pagination]}
@@ -79,7 +79,7 @@ function Meteo() {
             )}
           </Swiper>
         </div>
-        <div className="box-moon">
+        <div className="box-moon" style={(heuresDay > 18) ? {backgroundColor: 'var(--background-indic-night)', color: 'white'} : (heuresDay > 7) ? {backgroundColor: 'var(--background-indic)', color: 'black'} : {backgroundColor: 'var(--background-indic)', color: 'black'}}>
           {
             data.map((res,index) => (
               index === 0 ? <Moon moonPhase={res.moon_phase}/> : <></>
