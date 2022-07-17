@@ -64,6 +64,62 @@ export const listes_proverbes_jour =
     {
         id: 17,
         proverbes: "La paix vient de l’intérieur."    
+    },
+    {
+        id: 18,
+        proverbes: "L'esprit, comme le temps, a ses jours nébuleux."
+    },
+    {
+        id: 19,
+        proverbes: "Un jour en vaut trois à celui qui fait chaque chose en son temps"
+    },
+    {
+        id: 20,
+        proverbes: "Chaque jour de la vie d'un homme est un feuillet de son histoire"
+    },
+    {
+        id: 21,
+        proverbes: "Le jour présent vaut mieux que deux lendemains."
+    },
+    {
+        id: 22,
+        proverbes: "Un jour pour celui qui fait tout en son temps, en vaut au moins trois."
+    },
+    {
+        id: 23,
+        proverbes: "L'aurore est la messagère du jour."
+    },
+    {
+        id: 24,
+        proverbes: "Un seul jour en vaut trois à qui se sert du temps."
+    },
+    {
+        id: 25,
+        proverbes: "Louez la beauté du jour quand il est fini."
+    },
+    {
+        id: 26,
+        proverbes: "À ce jour qui nous luit, qui sait si le destin doit ajouter encore celui du lendemain ?"
+    },
+    {
+        id: 27,
+        proverbes: "La vérité veut voir le jour"   
+    },
+    {
+        id: 28,
+        proverbes: "Là où chantent plusieurs coqs, le jour est en retard."
+    },
+    {
+        id: 29,
+        proverbes: "Qui ne sort que de jour n'a pas besoin de lanterne"
+    },
+    {
+        id: 30,
+        proverbes: "Nos jours les plus beaux ne sont point sans tristesse."
+    },
+    {
+        id: 31,
+        proverbes: "Il est des jours heureux, mais point de vie heureuse."
     }
 ];
 
@@ -137,5 +193,61 @@ export const listes_proverbes_nuit =
         id: 17,
         proverbes: "Trop de sommeil est une remède qui ouvre la porte à la pauvreté spirituelle de l'âme"
     },
+    {
+        id: 18,
+        proverbes: "La nuit porte conseil"
+    },
+    {
+        id: 19,
+        proverbes: "La nuit ça change tout la nuit, c'est merveilleux la nuit."
+    },
+    {
+        id: 20,
+        proverbes: "La vaste nuit allume toutes les étoiles."
+    },
+    {
+        id: 21,
+        proverbes: "Chaque nuit doit avoir son menu"
+    },
+    {
+        id: 22,
+        proverbes: "La nuit toue les chats sont gris"
+    },
+    {
+        id: 23,
+        proverbes: "La nuit est déjà proche à qui passe midi."
+    },
+    {
+        id: 24,
+        proverbes: "Qui veille la nuit, se réjouit le matin."
+    },
+    {
+        id: 25,
+        proverbes: "Le jour a des yeux, la nuit a des oreilles"
+    },
+    {
+        id: 26,
+        proverbes: "On a besoin dans la nuit de croire au soleil"
+    },
+    {
+        id: 27,
+        proverbes: "Celui qui retient la nuit s'y perd."
+    },
+    {
+        id: 28,
+        proverbes: "La nuit dure longtemps mais le jour finit par arriver."
+    },
+    {
+        id: 29,
+        proverbes: "Le rêve est l'aquarium de la nuit."
+    },
+    {
+        id: 30,
+        proverbes: "La nuit appartient au jour qui le précède."
+    },
+    {
+        id: 31,
+        proverbes: "La nuit était papier -- nous étions encre"
+    }
 ];
 
