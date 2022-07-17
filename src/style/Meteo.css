@@ -1,7 +1,7 @@
 header{
     width: var(--full-width);
     height: var(--height-header);
-    background-color: red;
+    /* background-color: red; */
     display: inline-block;
     position: relative;
 }
