@@ -1,0 +1,20 @@
+div.case-saison{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: var(--full-width);
+    height: var(--full-height);
+}
+
+h2.titre-saison{
+    color: var(--color-white);
+    font-family: var(--montserrat);
+    font-size: 3.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+}
