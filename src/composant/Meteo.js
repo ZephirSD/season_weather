@@ -56,6 +56,8 @@ function Meteo({ heuresDay }) {
                     <Temperature
                       indic={res.temp.day}
                       weather={res.weather}
+                      tempMin={res.temp.min}
+                      tempMax={res.temp.max}
                       key={index}
                     />
                   </SwiperSlide>
