@@ -8,7 +8,7 @@
     </div>
 </div>
 <div>
-    <img src="" alt="visuel"/>
+    <img src="public/Image/apercu_site_nuit.png" alt="visuel"/>
     <div align="center">
         <h4 topmargin="0" bottommargin="0">Aperçu du site de nuit</h4>
     </div>
