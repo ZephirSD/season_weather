@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import sun from "../../assets/icones/sun_icon.png"
 import rain from "../../assets/icones/rain_icon.png";
-
+import cloud_icon from "../../assets/icones/cloud_icon_indic.png";
 
 function Temperature({indic,weather}) {
   const [changeWeather,setChangeWeather] = useState();
@@ -10,7 +10,7 @@ function Temperature({indic,weather}) {
     let mainWeather = await weather;
     if(mainWeather !== undefined){
       mainWeather.map((weat) => (
-        (weat.main) === 'Rain' ?  setChangeWeather(rain): (weat.main) === 'Clear' ? setChangeWeather(sun) : <></>
+        (weat.main) === 'Rain' ?  setChangeWeather(rain) : (weat.main) === 'Clear' ? setChangeWeather(sun) : (weat.main) === 'Clouds' ? setChangeWeather(cloud_icon) : <></>
       ))
     }
   }
@@ -111,6 +111,4 @@ function Moon({moonPhase}) {
   )
 }
 
-export default Moon
-
-export {Temperature,Vent,Humidite,Pression,Cloud}
+export {Temperature,Vent,Humidite,Pression,Cloud,Moon}
