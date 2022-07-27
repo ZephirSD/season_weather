@@ -7,9 +7,16 @@ import direction from "../assets/icones/direction_icon.png";
 import water from "../assets/icones/water_icon.png";
 import wave from "../assets/icones/wave_icon.png";
 import cloud from "../assets/icones/cloud_icon.png";
-import Moon, { Cloud, Humidite, Pression, Temperature, Vent } from "./modules/Indicateur";
+import {
+  Cloud,
+  Humidite,
+  Pression,
+  Temperature,
+  Vent,
+  Moon,
+} from "./modules/Indicateur";
 
-function Meteo({heuresDay}) {
+function Meteo({ heuresDay }) {
   const [data, setData] = useState([]);
   const meteoAPI = () => {
     fetch(
@@ -19,34 +26,22 @@ function Meteo({heuresDay}) {
       .then((value) => setData(value.daily))
       .catch((error) => console.log("error", error));
   };
-  // console.log(data);
-  // window.addEventListener('load', () =>{
-  //   let displayDate = new Date();
-  //   let heures = displayDate.getHours();
-  //   let minutes = displayDate.getMinutes();
-  //   minutes = checkTime(minutes);
-  //   // var t = setTimeout(startTime, 500);
-  //   function checkTime(i) {
-  //       if (i < 10) {i= "0" + i};
-  //       return i;
-  //   }
-  //   console.log(heures);
-  // })
-  // const onloadDate = () => {
-  //   window.onload = function () {
-  //     let displayDate = new Date();
-  //     let heures = displayDate.getHours();
-  //     // let minutes = displayDate.getMinutes();
-  //     console.log(heures);
-  //   }
-  // }
   useEffect(() => {
     meteoAPI();
   }, []);
   return (
     <>
       <header>
-        <div className="box-meteo" style={(heuresDay > 18) ? {backgroundColor: 'var(--background-indic-night)'} : (heuresDay > 7) ? {backgroundColor: 'var(--background-indic)'} : {backgroundColor: 'var(--background-indic)'}}>
+        <div
+          className="box-meteo"
+          style={
+            heuresDay >= 18
+              ? { backgroundColor: "var(--background-indic-night)" }
+              : heuresDay >= 7
+              ? { backgroundColor: "var(--background-indic)" }
+              : { backgroundColor: "var(--background-indic)" }
+          }
+        >
           <Swiper
             spaceBetween={20}
             modules={[Pagination]}
@@ -56,36 +51,58 @@ function Meteo({heuresDay}) {
           >
             {data.map((res, index) =>
               index === 0 ? (
-                <><SwiperSlide>
-                  <Temperature
-                    indic={res.temp.day}
-                    weather={res.weather}
-                    key={index} />
-                </SwiperSlide><SwiperSlide>
-                    <Vent img={direction} indic={res.wind_speed} degre={res.wind_deg} />
-                  </SwiperSlide><SwiperSlide>
+                <>
+                  <SwiperSlide>
+                    <Temperature
+                      indic={res.temp.day}
+                      weather={res.weather}
+                      key={index}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Vent
+                      img={direction}
+                      indic={res.wind_speed}
+                      degre={res.wind_deg}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
                     <Humidite img={water} indic={res.humidity} />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <Pression img={wave} indic={res.pressure}/>
+                    <Pression img={wave} indic={res.pressure} />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <Cloud img={cloud} indic={res.clouds}/>
+                    <Cloud img={cloud} indic={res.clouds} />
                   </SwiperSlide>
-                  </>
+                </>
               ) : (
                 <></>
               )
             )}
           </Swiper>
         </div>
-        <div className="box-moon" style={(heuresDay > 18) ? {backgroundColor: 'var(--background-indic-night)', color: 'white'} : (heuresDay > 7) ? {backgroundColor: 'var(--background-indic)', color: 'black'} : {backgroundColor: 'var(--background-indic)', color: 'black'}}>
-          {
-            data.map((res,index) => (
-              index === 0 ? <Moon moonPhase={res.moon_phase}/> : <></>
-            ))
-          }
-        </div>
+        {heuresDay >= 18 ? (
+          <div
+            className="box-moon"
+            style={
+              heuresDay >= 18
+                ? {
+                    backgroundColor: "var(--background-indic-night)",
+                    color: "white",
+                  }
+                : heuresDay >= 7
+                ? { backgroundColor: "var(--background-indic)", color: "black" }
+                : { backgroundColor: "var(--background-indic)", color: "black" }
+            }
+          >
+            {data.map((res, index) =>
+              index === 0 ? <Moon moonPhase={res.moon_phase} /> : <></>
+            )}
+          </div>
+        ) : (
+          <></>
+        )}
       </header>
     </>
   );
