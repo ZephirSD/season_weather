@@ -10,9 +10,10 @@ div.box-meteo,
 div.box-moon{
     height: var(--height-100);
     width: var(--width-box-header);
-    background-color: var(--background-indic);
+    /* background-color: var(--background-indic); */
     border-radius: 15px;
     position: absolute;
+    z-index: 2;
 }
 
 div.box-moon{
