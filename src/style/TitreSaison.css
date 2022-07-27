@@ -9,6 +9,19 @@ div.case-saison{
     left: 0;
     width: var(--full-width);
     height: var(--full-height);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div.case-saison::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.479);
 }
 
 h2.titre-saison{
@@ -16,5 +29,7 @@ h2.titre-saison{
     font-family: var(--montserrat);
     font-size: 3.75rem;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 3.5px;
+    font-weight: 300;
+    z-index: 5;
 }
