@@ -1,4 +1,8 @@
 import React from "react";
+import eteImage from "../assets/background/ete-image.png";
+import automneImage from "../assets/background/automne-image.png";
+import hiverImage from "../assets/background/hiver-image.jpg";
+import printempsImage from "../assets/background/printemps-wallpaper.png";
 
 function TitreSaison({ jour, mois }) {
   const dateAct = `${mois - 1}/${jour}`;
@@ -18,16 +22,31 @@ function TitreSaison({ jour, mois }) {
   const prinDate = new Date("", monthPrin - 1, dayPrin);
   return (
     <>
-      <div className="case-saison">
+      <div
+        className="case-saison"
+        style={
+          actDate > eteDate && actDate < autDate ? (
+            { backgroundImage: `url(${eteImage})` }
+          ) : actDate > autDate && actDate < hivDate ? (
+            { backgroundImage: `url(${automneImage})` }
+          ) : actDate > hivDate && actDate < prinDate ? (
+            { backgroundImage: `url(${hiverImage})` }
+          ) : actDate > prinDate && actDate < eteDate ? (
+            { backgroundImage: `url(${printempsImage})` }
+          ) : (
+            <></>
+          )
+        }
+      >
         <h2 className="titre-saison">
           {actDate > eteDate && actDate < autDate ? (
-            "Ete"
+            "été"
           ) : actDate > autDate && actDate < hivDate ? (
-            "Automne"
+            "automne"
           ) : actDate > hivDate && actDate < prinDate ? (
-            "Hiver"
+            "hiver"
           ) : actDate > prinDate && actDate < eteDate ? (
-            "Printemps"
+            "printemps"
           ) : (
             <></>
           )}
