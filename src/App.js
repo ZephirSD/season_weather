@@ -1,33 +1,37 @@
-import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import React from "react";
 import { Html } from "@react-three/drei";
+import { useEffect, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
 import "./style/style.scss";
-// import Model from "./composant/modules/Lanscape";
-import Fantasy from "./composant/modules/Fantasy";
-// import Meteo from "./composant/Meteo";
+import Meteo from "./composant/Meteo";
 import Proverbes from "./composant/Proverbes";
+import TitreSaison from "./composant/TitreSaison";
 
 function App() {
   const [dateState, setDateState] = useState(0);
+  const [dayState, setDayState] = useState(0);
+  const [monthState, setMonthState] = useState(0);
   let date = new Date();
   let hoursDisplay = date.getHours();
+  let dayDisplay = date.getDate();
+  let monthDisplay = date.getMonth() + 1;
+  
   useEffect(() =>{
-      setInterval(() =>{
-          setDateState(hoursDisplay);
-      },1000)
-  })
+    setDateState(hoursDisplay);
+    setDayState(dayDisplay);
+    setMonthState(monthDisplay);
+  },[dayDisplay, hoursDisplay, monthDisplay])
+  
   return (
     <>
-      <Canvas flat={true} shadows={true} camera={{position: [240,120,-180]}} style={{ width: "100%", height: "100vh" }}>
-        <ambientLight />
-          <Suspense fallback={null}>
-              <Fantasy />
-              <Html fullscreen>
-                {/* <Meteo heuresDay={dateState}/> */}
-                <Proverbes heuresDay={dateState}/>
-              </Html>
-          </Suspense>
+      <Canvas style={{width: '100%', height: '100vh'}}>
+        <Suspense fallback={null}>
+          <Html fullscreen>
+            <Meteo heuresDay={dateState}/>
+            <TitreSaison jour={dayState} mois={monthState}/>
+          <Proverbes heuresDay={dateState} dayMonths={dayState}/>
+          </Html>
+        </Suspense>
       </Canvas>
     </>
   );
