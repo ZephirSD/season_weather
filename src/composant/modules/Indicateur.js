@@ -3,9 +3,11 @@ import sun from "../../assets/icones/sun_icon.png"
 import rain from "../../assets/icones/rain_icon.png";
 import cloud_icon from "../../assets/icones/cloud_icon_indic.png";
 
-function Temperature({indic,weather}) {
+function Temperature({indic,weather,tempMin,tempMax}) {
   const [changeWeather,setChangeWeather] = useState();
   const [indicState,setIndicState] = useState();
+  const [tempMinState,setTempMinState] = useState();
+  const [tempMaxState,setTempMaxState] = useState();
   const functionWeather = async () => {
     let mainWeather = await weather;
     if(mainWeather !== undefined){
@@ -16,8 +18,16 @@ function Temperature({indic,weather}) {
   }
   const requestIndic = async () => {
     let resultatIndic = await indic;
+    let resultatTempMin = await tempMin;
+    let resultatTempMax = await tempMax;
     if(resultatIndic !== undefined){
       setIndicState(resultatIndic);
+    }
+    if(resultatTempMin !== undefined){
+      setTempMinState(resultatTempMin);
+    }
+    if(resultatTempMax !== undefined){
+      setTempMaxState(resultatTempMax);
     }
   }
   useEffect(() => {
@@ -30,8 +40,14 @@ function Temperature({indic,weather}) {
         <div className='icon-box'>
             <img src={changeWeather} alt="meteo" className='image-meteo'/>
         </div>
-        <div className='indic-meteo' style={indic > 25 ? {color:'#DC6969'} : {color:'#6296D5'}}>
-            {`${Math.round(indicState)}°C`}
+        <div className='grid-indic-meteo'>
+          <div className='indic-meteo' style={indic > 25 ? {color:'#DC6969'} : {color:'#6296D5'}}>
+              {`${Math.round(indicState)}°C`}
+          </div>
+          <div className='grid-temp-indic'>
+            <span className='temp-max'>{`${Math.round(tempMaxState)}°C`}</span>
+            <span className='temp-min'>{`${Math.round(tempMinState)}°C`}</span>
+          </div>
         </div>
       </div>
     </>
