@@ -3,8 +3,8 @@ async function glossary(){
     let dictonary = await response.json();
     document.title = dictonary.title;
     document.querySelector('meta[name="description"]').content = dictonary.content_description;
-    document.querySelector("link[rel='icon']").href = "image/" + dictonary.image_icon.url;
-    document.querySelector("link[rel='apple-touch-icon']").href =  "image/" + dictonary.image_icon.url;
+    document.querySelector("link[rel='icon']").href = "Image/" + dictonary.image_icon.url;
+    document.querySelector("link[rel='apple-touch-icon']").href =  "Image/" + dictonary.image_icon.url;
     let attrColor = document.querySelectorAll('meta[name="theme-color"]');
     attrColor.forEach((attr) => {
         let mediaAttr = attr.getAttribute('media');
@@ -17,7 +17,7 @@ async function glossary(){
     });
     document.querySelector('meta[name="og:title"]').content = dictonary.title;
     document.querySelector('meta[name="og:description"]').content = dictonary.content_description;
-    document.querySelector('meta[name="og:image"]').content = "image/" + dictonary.image_icon.url;
+    document.querySelector('meta[name="og:image"]').content = "Image/" + dictonary.image_icon.url;
     document.querySelector('meta[property="twitter:title"]').content = dictonary.title;
     document.querySelector('meta[property="twitter:description"]').content = dictonary.content_description;
     document.querySelector('meta[property="twitter:image"]').content = dictonary.image_icon.url;
