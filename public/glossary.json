@@ -1,8 +1,8 @@
 {
-    "title": "Application React",
-    "content_description": "technologie",
+    "title": "4 saisons en Proverbes",
+    "content_description": "Projet Web représantant les quatres saisons de l'année ainsi que l'aperçu de la météo de la journée et les phases lunaires suivi d'un proverbe par jour et par nuit",
     "image_icon": {
-        "url": "image.png",
+        "url": "Icône/logo saison.png",
         "size": "16x16"
     },
     "theme_color": {
